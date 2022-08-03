@@ -1,0 +1,45 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+}
+
+group = 'com.gmail.gremlin.gosha'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+//compileJava.options.encoding = 'UTF-8'
+//compileTestJava.options.encoding = 'UTF-8'
+
+dependencies {
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//compile("org.springframework.boot:spring-boot-starter")
+	//compile 'org.springframework:spring-webmvc:3.2.2.RELEASE'
+//	compile 'org.springframework:spring-core:2.7.2.RELEASE'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+	println "EXIT_FROM_tasks.withType(JavaCompile)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+}
+
+/*tasks.register('printProps') {
+	doLast {
+		println commandLineProjectProp
+		println gradlePropertiesProp
+		println systemProjectProp
+		println System.properties['system']
+	}
+}*/
